@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="15dp">
+
+
+
+    <ImageView
+        android:id="@+id/image_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp" />
+    
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:textSize="16sp"
+        android:textColor="#e52d27"
+        android:hint="用户名"
+        android:layout_toRightOf="@id/image_icon"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/tv_title"
+        android:layout_below="@id/tv_title"
+        android:hint="这里是你想要发布的内容......"
+        />
+
+
+
+</RelativeLayout>

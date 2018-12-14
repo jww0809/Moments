@@ -19,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register" />
-        <activity android:name=".Moments"></activity>
+        <activity android:name=".Moments" />
+        <activity android:name=".Publish"></activity>
     </application>
 
 </manifest>

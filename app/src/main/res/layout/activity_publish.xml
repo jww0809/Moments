@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/tv_cancle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="?android:attr/borderlessButtonStyle"
+            android:text="取消"
+            android:textSize="20dp"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tv_write"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="写动态"
+            android:textSize="24dp"
+            android:textColor="#480048"
+            android:gravity="center"
+            android:layout_toRightOf="@id/tv_cancle"
+            android:layout_marginLeft="75dp"
+            />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送"
+            android:textSize="20dp"
+            android:gravity="center"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            />
+
+        <EditText
+            android:id="@+id/tv_writeContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/tv_write"/>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_below="@id/rl_1"
+
+        android:layout_marginBottom="5dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_address"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/address"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="所在位置                                           ＞"
+            android:gravity="center_vertical"
+            android:textSize="18dp"
+            android:textColor="#232526"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/bg_line"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/ll_1"
+        >
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user"
+            android:layout_marginLeft="15dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:text="谁能看到                                            ＞"
+            android:gravity="center_vertical"
+            android:textSize="18dp"
+            android:textColor="#232526"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>
