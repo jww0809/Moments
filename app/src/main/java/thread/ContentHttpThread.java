@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 import utils.HelpHttp;
 
@@ -18,6 +19,7 @@ public class ContentHttpThread extends Thread{
 
     private String username;
     private String content;
+    private String status;
 
     private String result;
 
@@ -28,30 +30,23 @@ public class ContentHttpThread extends Thread{
         this.result = result;
     }
 
-    public ContentHttpThread(String username,String content) {
+    public ContentHttpThread(String username,String content,String status) {
         this.username = username;
         this.content = content;
+        this.status = status;
     }
 
     @Override
     public void run() {
         super.run();
         URL url = null;
-        String msg;
         try {
-            url = new URL(HelpHttp.url +"/ContentServlet?username="+username+"&content="+content);
+            url = new URL(HelpHttp.url +"/ContentServlet"+"?username="+URLEncoder.encode(username, "utf-8")+"&content="+URLEncoder.encode(content, "utf-8")+"&status="+URLEncoder.encode(status, "utf-8"));
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.setRequestProperty("Charset", "utf-8");
             Log.i("ContentHttp开始连接","开始");
             urlConnection.connect();
-            //请求的数据
-            //String data = "username=" + URLEncoder.encode(username, "utf-8") + "&content=" + URLEncoder.encode(content, "utf-8");
-            //String data = "username=" + URLEncoder.encode(username, "utf-8")+"&content=" + URLEncoder.encode(content, "utf-8");
-            //获取输出流，并将请求内容写入该流
-            //OutputStream outputStream = urlConnection.getOutputStream();
-            //outputStream.write(data.getBytes());
-            //outputStream.flush();
             Log.i("ContentHttp已连接","写入成功");
             if (urlConnection.getResponseCode() == 200) {
                 //获取服务器响应的输入流对象

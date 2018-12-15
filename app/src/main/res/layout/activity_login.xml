@@ -4,17 +4,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/index_bg4">
-
+    
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="50dp">
-
+        
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:src="@drawable/reg_icon"
+            android:src="@drawable/login_icon"
             />
 
 
@@ -23,7 +23,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         >
 
         <ImageView
@@ -40,10 +40,11 @@
             android:layout_height="40dp"
             android:text="用户名:"
             android:textSize="24sp"
+
             android:layout_toRightOf="@id/img_user"/>
 
         <EditText
-            android:id="@+id/reg_user"
+            android:id="@+id/edit_user"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_toRightOf="@id/tv_user"
@@ -69,12 +70,12 @@
             android:id="@+id/tv_password"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="密    码:"
+            android:text="密     码:"
             android:textSize="24sp"
             android:layout_toRightOf="@id/img_password"/>
 
         <EditText
-            android:id="@+id/reg_password"
+            android:id="@+id/edit_password"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:inputType="textPassword"
@@ -83,82 +84,29 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        >
-
-        <ImageView
-            android:id="@+id/img_phone"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/phone"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            />
-        <TextView
-            android:id="@+id/tv_phone"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="手    机:"
-            android:textSize="24sp"
-            android:layout_toRightOf="@id/img_phone"/>
-
-        <EditText
-            android:id="@+id/reg_phone"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:inputType="number"
-            android:layout_toRightOf="@id/tv_phone"
-            android:layout_marginRight="15dp"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        >
-
-        <ImageView
-            android:id="@+id/img_mail"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/mail"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            />
-        <TextView
-            android:id="@+id/tv_mail"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:text="邮    箱:"
-            android:textSize="24sp"
-            android:layout_toRightOf="@id/img_mail"/>
-
-        <EditText
-            android:id="@+id/reg_mail"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_toRightOf="@id/tv_mail"
-            android:layout_marginRight="15dp"/>
-
-    </RelativeLayout>
-
-
-
     <Button
-        android:id="@+id/btn_reg"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="注册"
+        android:text="登录"
         android:textSize="24dp"
-        android:textColor="#be9375"
+        android:textColor="#D76D77"
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="20dp"
         android:background="@drawable/bg_btn_press"/>
+
+    <Button
+        android:id="@+id/btn_modify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="修改密码"
+        android:textSize="24dp"
+        android:textColor="#D76D77"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="20dp"
+        android:background="#B2FEFA"/>
 
 
 </LinearLayout>

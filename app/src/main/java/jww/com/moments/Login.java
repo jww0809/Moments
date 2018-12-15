@@ -10,15 +10,15 @@ import android.widget.Toast;
 
 import thread.LoginHttpThread;
 
-public class MainActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
     private Button btnLogin;
-    private Button btnReg;
+    private Button btnModify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         btnLogin = findViewById(R.id.btn_login);
 
@@ -45,27 +45,30 @@ public class MainActivity extends AppCompatActivity {
                         //将username的值传到朋友圈显示界面Moments
                         //不同的username显示不同的朋友圈内容
                         Bundle bMoments = new Bundle();//声明bundle对象
-                        Intent intentMoments = new Intent(MainActivity.this, Moments.class);
+                        Intent intentMoments = new Intent(Login.this, Moments.class);
                         bMoments.putString("username", username);//设置bundle内容
                         intentMoments.putExtras(bMoments);//绑定bundle到intent
                         startActivity(intentMoments);
                     } else {
-                        Toast.makeText(MainActivity.this, "用户名或密码错误,请重新输入!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "用户名或密码错误,请重新输入!", Toast.LENGTH_SHORT).show();
                         return;
                     }
                 } else {
-                    Toast.makeText(MainActivity.this, "用户名与密码不能为空", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "用户名与密码不能为空", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
             }
         });
 
-        btnReg = findViewById(R.id.btn_reg);
-        btnReg.setOnClickListener(new View.OnClickListener() {
+        /**
+         * 修改密码
+         */
+        btnModify = findViewById(R.id.btn_modify);
+        btnModify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Register.class);
+                Intent intent = new Intent(Login.this, ModifyPwd.class);
                 startActivity(intent);
             }
         });

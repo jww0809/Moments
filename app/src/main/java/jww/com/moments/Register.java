@@ -44,14 +44,14 @@ public class Register extends AppCompatActivity {
                 String regResult = regHttpThread.getRegResult();
                 if (regResult.equals("true")) {
                     Toast.makeText(Register.this, "注册成功,正在跳转登录界面...", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Register.this, MainActivity.class);
+                    Intent intent = new Intent(Register.this, Login.class);
                     startActivity(intent);
                 }
-                if(regResult.equals("alreadyExist")){
+                else if(regResult.equals("alreadyExist")){
                     Toast.makeText(Register.this, "该用户已注册,请直接登录", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(Register.this, MainActivity.class);
+                    Intent intent = new Intent(Register.this, Login.class);
                     startActivity(intent);
-                }else {
+                }else{
                     Toast.makeText(Register.this, "注册失败,请检查您的网络状态", Toast.LENGTH_SHORT).show();
                 }
             }

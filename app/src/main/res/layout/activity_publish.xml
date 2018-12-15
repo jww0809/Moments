@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/index_bg4">
 
     <RelativeLayout
         android:id="@+id/rl_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="15dp"
+        >
 
         <Button
             android:id="@+id/tv_cancle"
@@ -51,14 +53,72 @@
 
     </RelativeLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_below="@id/rl_1"
+        >
+
+        <ImageView
+            android:id="@+id/iv_user"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/user"
+            android:layout_marginLeft="15dp"
+            />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="设置可见性"
+            android:gravity="center_vertical"
+            android:textSize="18dp"
+            android:textColor="#232526"
+            android:layout_marginRight="15dp"
+            android:paddingLeft="10dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <RadioGroup
+            android:id="@+id/rg_visible"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            >
+
+            <RadioButton
+                android:id="@+id/rb_public"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="公开"
+                android:checked="true"
+                android:layout_marginRight="13dp"
+                />
+
+            <RadioButton
+                android:id="@+id/rb_private"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="仅自己可见"
+                />
+
+        </RadioGroup>
+            </RelativeLayout>
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/ll_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_below="@id/rl_1"
-
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/ll_2"
         android:layout_marginBottom="5dp"
         >
 
@@ -78,37 +138,8 @@
             android:textColor="#232526"
             android:layout_marginRight="15dp"
             android:paddingLeft="10dp"
-            android:background="@drawable/bg_line"
+
             />
     </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/ll_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_below="@id/ll_1"
-        >
-
-        <ImageView
-            android:id="@+id/iv_user"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@drawable/user"
-            android:layout_marginLeft="15dp"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="谁能看到                                            ＞"
-            android:gravity="center_vertical"
-            android:textSize="18dp"
-            android:textColor="#232526"
-            android:layout_marginRight="15dp"
-            android:paddingLeft="10dp"
-            />
-    </LinearLayout>
-
 
 </RelativeLayout>

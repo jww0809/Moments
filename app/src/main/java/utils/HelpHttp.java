@@ -1,5 +1,5 @@
 package utils;
 
 public class HelpHttp {
-    public static  String url="http://10.200.2.154:8080/AndroidUse/";
+    public static  String url="http://10.200.5.135:8080/AndroidUse/";
 }

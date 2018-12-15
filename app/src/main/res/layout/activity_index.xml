@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:id="@+id/lv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+
+        >
+    <ImageView
+        android:id="@+id/index_iv"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/index_icon2"
+
+        />
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:id="@+id/index_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="50dp"
+            android:text="--欢迎您--"
+            android:gravity="center"
+            android:layout_below="@id/index_iv"/>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/lv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lv_1"
+        android:layout_marginTop="100dp">
+    <Button
+        android:id="@+id/index_login"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textSize="30dp"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/index_bg_btn"/>
+
+
+        <Button
+            android:id="@+id/index_reg"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:textSize="30dp"
+            android:layout_marginRight="40dp"
+            android:layout_alignParentRight="true"
+
+            android:background="#78ffd6"/>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

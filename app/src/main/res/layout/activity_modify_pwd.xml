@@ -3,12 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/background">
+    android:background="@drawable/index_bg4">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/login_icon"
+            />
+
+
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         >
 
         <ImageView
@@ -25,10 +40,11 @@
             android:layout_height="40dp"
             android:text="用户名:"
             android:textSize="24sp"
+
             android:layout_toRightOf="@id/img_user"/>
 
         <EditText
-            android:id="@+id/edit_user"
+            android:id="@+id/edit_modifyUser"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_toRightOf="@id/tv_user"
@@ -54,12 +70,12 @@
             android:id="@+id/tv_password"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="密    码:"
+            android:text="旧密码:"
             android:textSize="24sp"
             android:layout_toRightOf="@id/img_password"/>
 
         <EditText
-            android:id="@+id/edit_password"
+            android:id="@+id/edit_modifyPwd"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:inputType="textPassword"
@@ -68,29 +84,49 @@
 
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="match_parent"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="登录"
-        android:textSize="24dp"
-        android:textColor="#be9375"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginLeft="20dp"
-        android:background="@drawable/bg_btn_press"/>
+        android:layout_marginTop="5dp"
+        >
+
+        <ImageView
+            android:id="@+id/img_newPassword"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/password"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            />
+        <TextView
+            android:id="@+id/tv_newPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="新密码:"
+            android:textSize="24sp"
+            android:layout_toRightOf="@id/img_newPassword"/>
+
+        <EditText
+            android:id="@+id/edit_modifyNewPwd"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:inputType="textPassword"
+            android:layout_toRightOf="@id/tv_newPassword"
+            android:layout_marginRight="15dp"/>
+
+    </RelativeLayout>
 
     <Button
-        android:id="@+id/btn_reg"
+        android:id="@+id/btn_modifyPwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="注册"
+        android:text="确认修改"
         android:textSize="24dp"
-        android:textColor="#be9375"
+        android:textColor="#D76D77"
         android:layout_marginTop="20dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/bg_btn_press"/>
+        android:background="#B2FEFA"/>
 
 
 </LinearLayout>

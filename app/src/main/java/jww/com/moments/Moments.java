@@ -4,7 +4,6 @@ package jww.com.moments;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -44,6 +43,8 @@ public class Moments extends AppCompatActivity {
         List<Item>list = JSON.parseArray(userHttpThread.getResult(), Item.class);
         MomentAdapter momentAdapter = new MomentAdapter(this,R.layout.moment_style,list);
         ListView listView = findViewById(R.id.lv_moments);
+        /*View headerView = getLayoutInflater().inflate(R.layout.list_head, null);
+        listView.addHeaderView(headerView);*/
         listView.setAdapter(momentAdapter);
 
         //跳转到发朋友圈的界面
@@ -64,7 +65,7 @@ public class Moments extends AppCompatActivity {
         btnQuit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentToLogin = new Intent(Moments.this,MainActivity.class);
+                Intent intentToLogin = new Intent(Moments.this,Login.class);
                 startActivity(intentToLogin);
             }
         });

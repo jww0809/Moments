@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".IndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,9 @@
         </activity>
         <activity android:name=".Register" />
         <activity android:name=".Moments" />
-        <activity android:name=".Publish"></activity>
+        <activity android:name=".Publish" />
+        <activity android:name=".Login" />
+        <activity android:name=".ModifyPwd"></activity>
     </application>
 
 </manifest>
