@@ -6,6 +6,7 @@ public class MyUser {
     private String title;
     private String content;
 
+
     public MyUser(){
 
     }

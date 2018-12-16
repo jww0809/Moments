@@ -8,12 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import thread.ContentHttpThread;
+import thread.ImageHttpThread;
 
 /**10.200.224.65
  * 发布朋友圈的Activity
@@ -27,6 +29,7 @@ public class Publish extends AppCompatActivity {
     private Button btnCancle;
     private EditText tvContent;
     private RadioGroup rgVisible;
+    private RadioGroup rgMoodImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +38,11 @@ public class Publish extends AppCompatActivity {
 
         tvContent = findViewById(R.id.tv_writeContent);
 
+        rgMoodImg = findViewById(R.id.rg_moodimg);
+
+
         //获取单选框组
         rgVisible = findViewById(R.id.rg_visible);
-
-
-
-
 
         //写动态，发送数据到服务器，数据库
         btnSend = findViewById(R.id.btn_send);
@@ -55,11 +57,34 @@ public class Publish extends AppCompatActivity {
 
                 //接收content
                 String word = tvContent.getText().toString();
+
+
+
+
                 Log.i("username的值",username);
                 Log.i("word的值",word);
                 //输入的内容word不能为空
                 //开始发布内容
                 if(!word.equals("")&&!word.trim().equals("")){
+
+                    //获取图片
+                    String imgvar ="";
+                    for(int i=0;i<rgMoodImg.getChildCount();i++){
+                        RadioButton radioButton = (RadioButton) rgMoodImg.getChildAt(i);
+                        if(radioButton.isChecked()){
+                            //通过单选框选中的值--->图片的路径
+                            imgvar = radioButton.getText().toString();
+                        }
+                    }
+                    String imgUrl="";
+                    if(imgvar.equals("图1")){
+                        imgUrl = "img/erkang.png";
+                    }else if(imgvar.equals("图2")){
+                        imgUrl = "img/xiaoyanzi.png";
+                    }
+
+
+
                     String var="";
                     for(int i=0;i<rgVisible.getChildCount();i++){
                         RadioButton radioButton = (RadioButton) rgVisible.getChildAt(i);
@@ -76,7 +101,7 @@ public class Publish extends AppCompatActivity {
                     }
                     Log.i("status的值",status);
 
-                ContentHttpThread contentHttpThread = new ContentHttpThread(username,word,status);
+                ContentHttpThread contentHttpThread = new ContentHttpThread(username,word,status,imgUrl);
 
                 contentHttpThread.start();
 

@@ -1,6 +1,7 @@
 package adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +41,7 @@ public class MomentAdapter  extends ArrayAdapter {
             momentsLayout.titleView = view.findViewById(R.id.tv_title);
             momentsLayout.contentView = view.findViewById(R.id.tv_content);
             momentsLayout.headView = view.findViewById(R.id.image_icon);
+            momentsLayout.moodImgView = view.findViewById(R.id.image_mood);
             view.setTag(momentsLayout);
         }else{
             view = convertView;
@@ -49,7 +51,7 @@ public class MomentAdapter  extends ArrayAdapter {
         momentsLayout.titleView.setText(item.getUsername());
         momentsLayout.contentView.setText(item.getMood());
 
-        //获取图片
+        //获取头像
         ImageHttpThread imageHttpThread = new ImageHttpThread(item.getHeadImg());
         imageHttpThread.start();
 
@@ -59,7 +61,18 @@ public class MomentAdapter  extends ArrayAdapter {
             e.printStackTrace();
         }
 
+
+        //获取发布的图片
+        ImageHttpThread imageHttpThread2 = new ImageHttpThread(item.getMoodImg());
+        imageHttpThread2.start();
+        try {
+            imageHttpThread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         momentsLayout.headView.setImageBitmap(imageHttpThread.getResultBitmap());
+        momentsLayout.moodImgView.setImageBitmap(imageHttpThread2.getResultBitmap());
         
         return view;
     }
@@ -67,6 +80,7 @@ public class MomentAdapter  extends ArrayAdapter {
         ImageView headView;
         TextView titleView;
         TextView contentView;
+        ImageView moodImgView;
 
     }
 

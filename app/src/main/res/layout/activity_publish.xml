@@ -47,9 +47,59 @@
         <EditText
             android:id="@+id/tv_writeContent"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="150dp"
             android:layout_marginTop="15dp"
-            android:layout_below="@id/tv_write"/>
+            android:layout_below="@id/tv_write"
+            />
+    </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_1">
+
+            <RadioGroup
+                android:id="@+id/rg_moodimg"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/tv_moodimg1"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="图1"
+                    android:textSize="24dp" />
+
+                <RadioButton
+                    android:id="@+id/tv_moodimg2"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="图2"
+                    android:textSize="24dp"
+                    />
+            </RadioGroup>
+
+
+
+        <ImageView
+            android:id="@+id/img_mood"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/erkang"
+            android:layout_below="@id/rg_moodimg"/>
+
+            <ImageView
+                android:id="@+id/img_mood2"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/xiaoyanzi"
+                android:layout_below="@id/rg_moodimg"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                />
 
     </RelativeLayout>
 
@@ -57,8 +107,8 @@
         android:id="@+id/ll_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_below="@id/rl_1"
+        android:layout_marginTop="50dp"
+        android:layout_below="@id/rl_2"
         >
 
         <ImageView

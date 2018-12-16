@@ -91,7 +91,7 @@
         android:text="登录"
         android:textSize="24dp"
         android:textColor="#D76D77"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="20dp"
         android:background="@drawable/bg_btn_press"/>
@@ -103,10 +103,10 @@
         android:text="修改密码"
         android:textSize="24dp"
         android:textColor="#D76D77"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="20dp"
-        android:background="#B2FEFA"/>
+        android:background="@drawable/bg_btn_press"/>
 
 
 </LinearLayout>

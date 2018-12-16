@@ -9,16 +9,17 @@
 
     <ImageView
         android:id="@+id/image_icon"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_marginTop="30dp" />
     
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:textSize="16sp"
+        android:layout_height="40dp"
+        android:textSize="24sp"
         android:textColor="#e52d27"
+        android:gravity="center"
         android:hint="用户名"
         android:layout_toRightOf="@id/image_icon"
         android:layout_marginTop="30dp"
@@ -28,10 +29,19 @@
         android:id="@+id/tv_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/tv_title"
+        android:layout_marginLeft="65dp"
         android:layout_below="@id/tv_title"
+        android:textSize="20sp"
         android:hint="这里是你想要发布的内容......"
         />
+
+    <ImageView
+        android:id="@+id/image_mood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_content"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="30dp" />
 
 
 

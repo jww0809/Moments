@@ -2,18 +2,20 @@ package bean;
 
 public class Item {
 
-    private String headImg;
+    private  String headImg;
     private  String username;
     private  String mood;
+    private  String moodImg;
 
     public Item() {
 
     }
 
-    public Item(String headImg, String username, String mood) {
+    public Item(String headImg, String username, String mood,String moodImg) {
         this.headImg = headImg;
         this.username = username;
         this.mood = mood;
+        this.moodImg = moodImg;
     }
 
     public String getHeadImg() {
@@ -38,5 +40,13 @@ public class Item {
 
     public void setMood(String mood) {
         this.mood = mood;
+    }
+
+    public String getMoodImg() {
+        return moodImg;
+    }
+
+    public void setMoodImg(String moodImg) {
+        this.moodImg = moodImg;
     }
 }

@@ -20,6 +20,7 @@ public class ContentHttpThread extends Thread{
     private String username;
     private String content;
     private String status;
+    private String moodimg;
 
     private String result;
 
@@ -30,10 +31,11 @@ public class ContentHttpThread extends Thread{
         this.result = result;
     }
 
-    public ContentHttpThread(String username,String content,String status) {
+    public ContentHttpThread(String username,String content,String status,String moodimg) {
         this.username = username;
         this.content = content;
         this.status = status;
+        this.moodimg = moodimg;
     }
 
     @Override
@@ -41,7 +43,8 @@ public class ContentHttpThread extends Thread{
         super.run();
         URL url = null;
         try {
-            url = new URL(HelpHttp.url +"/ContentServlet"+"?username="+URLEncoder.encode(username, "utf-8")+"&content="+URLEncoder.encode(content, "utf-8")+"&status="+URLEncoder.encode(status, "utf-8"));
+            url = new URL(HelpHttp.url +"/ContentServlet"+"?username="+URLEncoder.encode(username, "utf-8")+"&content="+URLEncoder.encode(content, "utf-8")
+                    +"&status="+URLEncoder.encode(status, "utf-8")+"&moodimg="+URLEncoder.encode(moodimg, "utf-8"));
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
             urlConnection.setRequestProperty("Charset", "utf-8");
